@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --whatsapp-green: #00a884;
+  --whatsapp-light-green: #dcf8c6;
+  --whatsapp-panel: #f0f2f5;
+  --whatsapp-drawer: #ffffff;
+  --whatsapp-border: #e9edef;
+}
+
+.scrollbar-w-2::-webkit-scrollbar {
+  width: 0.375rem;
+  height: 0.375rem;
+}
+
+.scrollbar-track-transparent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thumb-gray::-webkit-scrollbar-thumb {
+  background: #8888886b;
+}
+
+.scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+  border-radius: 0.25rem;
+}
+
+.chat-bubble {
+  position: relative;
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.chat-bubble.agent {
+  background-color: var(--whatsapp-light-green);
+  margin-left: auto;
+}
+
+.chat-bubble.user {
+  background-color: white;
+}
+
+.chat-bubble::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 12px;
+  height: 12px;
+}
+
+.chat-bubble.agent::after {
+  right: -6px;
+  background: linear-gradient(135deg, var(--whatsapp-light-green) 50%, transparent 50%);
+}
+
+.chat-bubble.user::after {
+  left: -6px;
+  background: linear-gradient(-135deg, white 50%, transparent 50%);
+}
